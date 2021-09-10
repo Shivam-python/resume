@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="assets/css/styles.css">
+        
+        <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+
+        <!-- =====BOX ICONS===== -->
+        <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.5/dist/sweetalert2.all.min.js"></script>
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+<link rel="icon" href="https://cdn0.iconfinder.com/data/icons/illustricon-tech-iv/512/dude-512.png" type="image/icon type">
+        <title>It's Shivam</title>
+    </head>
+    <body>
+        <script>
+$('body').on('click','.contact__button',function (e){
+
+    $(".laoder").show();
+    
+    e.preventDefault();
+    var data=$('#contact_form').serialize();
+    if( $('#name').val() && $('#email').val() && $('#message').val()){
+                $.ajax({
+           type: "POST",
+           url: "http://ec2-52-14-132-192.us-east-2.compute.amazonaws.com/send_email/",
+           data: data, // serializes the form's elements.
+           success: function(data)
+           {
+            Swal.fire(
+  'Mail Sent',
+  'Thanks for reaching out to me.',
+  'info'
+);             
+$(".laoder").hide();  
+           },
+           error:function(data)
+           {
+            Swal.fire(
+  'Something went wrong',
+  'Please mail at raynoldw222@gmail.com.',
+  'info'
+)           ;    $(".laoder").hide();
+            
+           }
+         });
+        }
+else{
+    Swal.fire(
+  'Error',
+  'Please add Name,Email and message',
+  'error'
+)
+$(".laoder").hide();
+}
+    })
+    
+        </script>
+        <div class="laoder" style="text-align: center;"> <img class="loader-img" src="assets/img/ZZ5H.gif" alt="image" /></div>
+        <!--===== HEADER =====-->
+        <header class="l-header">
+            <nav class="nav bd-grid">
+                <div>
+                    <a href="#" class="nav__logo">Shivam</a>
+                </div>
+
+                <div class="nav__menu" id="nav-menu">
+                    <ul class="nav__list">
+                        <li class="nav__item"><a href="#home" class="nav__link active">Home</a></li>
+                        <li class="nav__item"><a href="#about" class="nav__link">About</a></li>
+                        <li class="nav__item"><a href="#skills" class="nav__link">Skills</a></li>
+                        <li class="nav__item"><a href="#work" class="nav__link">Work</a></li>
+                        <li class="nav__item"><a href="#contact" class="nav__link">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class='bx bx-menu'></i>
+                </div>
+            </nav>
+        </header>
+
+        <main class="l-main">
+            <!--===== HOME =====-->
+            <section class="home bd-grid" id="home">
+                <div class="home__data">
+                    <h1 class="home__title">Hi,<br>I am <span class="home__title-color">Shivam</span><br> Web Developer</h1>
+
+                    <a href="mailto:raynoldw222@gmail.com" class="button">Hire Me</a>
+                </div>
+
+                <div class="home__social">
+                    <a href="https://www.linkedin.com/in/shivam-pathak-471015194/" class="home__social-icon"><i class='bx bxl-linkedin'></i></a>
+                    <a href="https://github.com/Shivam-python" class="home__social-icon"><i class='bx bxl-github' ></i></a>
+                </div>
+
+                <div class="home__img">    
+                    <img src="assets/img/dp5.JPG" alt="">
+                </div>
+            </section>
+
+            <!--===== ABOUT =====-->
+            <section class="about section " id="about">
+                <h2 class="section-title">About</h2>
+
+                <div class="about__container bd-grid">
+                    <div class="about__img">
+                        <img src="assets/img/dp5.JPG" alt="">
+                    </div>
+                    
+                    <div>
+                        <h2 class="about__subtitle">I'am Shivam</h2>
+                        <p class="about__text">I am a Back-End Web Developer responsible for managing the interchange of data between the server and the users. My primary focus is on development of all server-side logic, definition and maintenance of the central database, and ensuring high performance and responsiveness to requests from the front-end.</p>           
+                        <p class="about__text">I am also familier with front-end libraries like ReactJs and I'm used to integrating APIs and other front-end components.</p>
+                    </div>                                   
+                </div>
+            </section>
+
+            <!--===== SKILLS =====-->
+            <section class="skills section" id="skills">
+                <h2 class="section-title">Skills</h2>
+
+                <div class="skills__container bd-grid">          
+                    <div>
+                        <h2 class="skills__subtitle">Profesional Skills</h2>
+                        <p class="skills__text">Working on variety of projects made me versatile in multitude of Backend,Frontend and Server technologies.</p>
+                        <div class="skills__data">
+                            <div class="skills__names">
+                                <i class='fab fa-python skills__icon'></i>
+                                <!-- <i class=""></i> -->
+                                <span class="skills__name">Python, Django-Rest Framework</span>
+                            </div>
+                            <div class="skills__bar skills__html">
+
+                            </div>
+                            <div>
+                                <span class="skills__percentage">95%</span>
+                            </div>
+                        </div>
+                        <div class="skills__data">
+                            <div class="skills__names">
+                                <i class='fas fa-database skills__icon'></i>
+                                <span class="skills__name">MySql, Postgres , Mongo DB</span>
+                            </div>
+                            <div class="skills__bar skills__css">
+                                
+                            </div>
+                            <div>
+                                <span class="skills__percentage">75%</span>
+                            </div>
+                        </div>
+                        <div class="skills__data">
+                            <div class="skills__names">
+                                <i class='fab fa-git-alt skills__icon'></i>
+                                <span class="skills__name">Git, Gitlab, Bitbucket, Jira</span>
+                            </div>
+                            <div class="skills__bar skills__ux">
+                                
+                            </div>
+                            <div>
+                                <span class="skills__percentage">75%</span>
+                            </div>
+                        </div>
+                        <div class="skills__data">
+                            <div class="skills__names">
+                                <i class='fad fa-server skills__icon' ></i>
+                                <span class="skills__name">AWS (S3, Lambda,EC2,RDS), DigitalOcean, Heroku</span>
+                            </div>
+                            <div class="skills__bar skills__js">
+                                
+                            </div>
+                            <div>
+                                <span class="skills__percentage">65%</span>
+                            </div>
+                        </div>
+                        <div class="skills__data">
+                            <div class="skills__names">
+                                <i class='bx bxl-javascript skills__icon'></i>
+                                <span class="skills__name">ReactJs/Javascript</span>
+                            </div>
+                            <div class="skills__bar skills__js">
+                                
+                            </div>
+                            <div>
+                                <span class="skills__percentage">65%</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div>              
+                        <img src="assets/img/work3.jpg" alt="" class="skills__img">
+                    </div>
+                </div>
+            </section>
+
+            <!--===== WORK =====-->
+            <section class="work section" id="work">
+                <h2 class="section-title">Work</h2>
+
+                <div class="work__container bd-grid">
+                    <div class="work__img">
+                        <a href="http://13.233.165.131/authentication/login" target="_blank"><img src="assets/img/threatxpert.jpg" alt=""></a>
+                        <p>Threatxpert</p>
+                    </div>
+                    <div class="work__img">
+                        <a href="https://skyquestt.com/" target="_blank"><img src="assets/img/skyquestt.jpg" alt=""></a>
+                        <p>Skyquestt</p>
+                    </div>
+                    <div class="work__img">
+                        <a href="https://cpay2.cssdev.co.ke/" target="_blank"><img src="assets/img/crystalpay.jpg" alt=""></a>
+                        <p>Crystalpay</p>
+                    </div>
+                    <div class="work__img">
+                        <a href="https://floey-customer.herokuapp.com/" target="_blank"><img src="assets/img/floey.jpg" alt=""></a>
+                        <p>Floey : A gym platform</p>
+                    </div>
+                    <div class="work__img">
+                        <a href="https://tayuss.com" target="_blank"><img src="assets/img/tayuss.jpg" alt=""></a>
+                        <p>Tayuss : Sales Platform</p>
+                    </div>
+                    <div class="work__img">
+                        <a href="https://newslettersheep.com" target="_blank"><img src="assets/img/newslettersheep.jpg" alt=""></a>
+                        <p>NewsletterSheep : Email Marketing</p>
+                    </div>
+                </div>
+            </section>
+
+            <!--===== CONTACT =====-->
+            <section class="contact section" id="contact">
+                <h2 class="section-title">Contact</h2>
+
+                <div class="contact__container bd-grid">
+                    <form action="#" id="contact_form" class="contact__form" method="POST">
+                        <input type="text" name="name" id="name" placeholder="Name" class="contact__input">
+                        <input name="email" id="email" type="mail" placeholder="Email" class="contact__input">
+                        <textarea name="message" id="message" cols="0" rows="10" class="contact__input"></textarea>
+                        <input type="button" value="Send" class="contact__button button">
+                    </form>
+                </div>
+            </section>
+        </main>
+
+        <!--===== FOOTER =====-->
+        <!-- <footer class="footer">
+            <p class="footer__title">Marlon</p>
+            <div class="footer__social">
+                <a href="#" class="footer__icon"><i class='bx bxl-facebook' ></i></a>
+                <a href="#" class="footer__icon"><i class='bx bxl-instagram' ></i></a>
+                <a href="#" class="footer__icon"><i class='bx bxl-twitter' ></i></a>
+            </div>
+            <p>&#169; 2020 copyright all right reserved</p>
+        </footer> -->
+        <footer class="text-gray-400 bg-gray-900 body-font">
+            <div class="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
+              <a class="flex title-font font-medium items-center md:justify-start justify-center text-white">
+       
+                <span class="ml-3 text-xl">Shivam</span>
+              </a>
+              <p class="text-sm text-gray-400 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-800 sm:py-2 sm:mt-0 mt-4">© 2020  —
+                <a href="https://twitter.com/Mr_Sam_786" class="text-gray-500 ml-1" target="_blank" rel="noopener noreferrer">@Mr_Sam_786</a>
+              </p>
+              <span class="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
+                <a class="text-gray-400" href="https://www.facebook.com/shivam.pathak.71619533" target="_blank">
+                  <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                    <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+                  </svg>
+                </a>
+                
+                <a class="ml-3 text-gray-400" href="https://www.instagram.com/ziddi_engineer/" target="_blank">
+                  <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                    <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+                    <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
+                  </svg>
+                </a>
+                <a class="ml-3 text-gray-400" href="https://www.linkedin.com/in/shivam-pathak-471015194/" target="_blank">
+                  <svg fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="0" class="w-5 h-5" viewBox="0 0 24 24">
+                    <path stroke="none" d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"></path>
+                    <circle cx="4" cy="4" r="2" stroke="none"></circle>
+                  </svg>
+                </a>
+              </span>
+            </div>
+          </footer>
+
+        <!--===== SCROLL REVEAL =====-->
+        <script src="https://unpkg.com/scrollreveal"></script>
+
+        <!--===== MAIN JS =====-->
+        <script src="assets/js/main.js"></script>
+    </body>
+</html>
