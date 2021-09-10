@@ -27,7 +27,7 @@ $('body').on('click','.contact__button',function (e){
     if( $('#name').val() && $('#email').val() && $('#message').val()){
                 $.ajax({
            type: "POST",
-           url: "http://ec2-52-14-132-192.us-east-2.compute.amazonaws.com/send_email/",
+           url: "https://shivampathak.herokuapp.com/send_email/",
            data: data, // serializes the form's elements.
            success: function(data)
            {
