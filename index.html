@@ -36,6 +36,9 @@ $('body').on('click','.contact__button',function (e){
   'Thanks for reaching out to me.',
   'info'
 );             
+$('#name').val('');
+$('#email').val('');
+$('#message').val('');
 $(".laoder").hide();  
            },
            error:function(data)
@@ -44,7 +47,11 @@ $(".laoder").hide();
   'Something went wrong',
   'Please mail at raynoldw222@gmail.com.',
   'info'
-)           ;    $(".laoder").hide();
+);
+$('#name').val('');
+$('#email').val('');
+$('#message').val('');
+$(".laoder").hide();
             
            }
          });
