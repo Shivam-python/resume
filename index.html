@@ -27,7 +27,7 @@ $('body').on('click','.contact__button',function (e){
     if( $('#name').val() && $('#email').val() && $('#message').val()){
                 $.ajax({
            type: "POST",
-           url: "https://shivampathak.herokuapp.com/send_email/",
+           url: "https://t87goxe24a.execute-api.ap-south-1.amazonaws.com/mood_dev/send_email/",
            data: data, // serializes the form's elements.
            success: function(data)
            {
@@ -157,7 +157,7 @@ $(".laoder").hide();
                                 
                             </div>
                             <div>
-                                <span class="skills__percentage">75%</span>
+                                <span class="skills__percentage">85%</span>
                             </div>
                         </div>
                         <div class="skills__data">
@@ -169,7 +169,19 @@ $(".laoder").hide();
                                 
                             </div>
                             <div>
-                                <span class="skills__percentage">75%</span>
+                                <span class="skills__percentage">85%</span>
+                            </div>
+                        </div>
+                        <div class="skills__data">
+                            <div class="skills__names">
+                                <i class='bx bxl-javascript skills__icon'></i>
+                                <span class="skills__name">Angular/ ReactJs / Javascript</span>
+                            </div>
+                            <div class="skills__bar skills__ux">
+                                
+                            </div>
+                            <div>
+                                <span class="skills__percentage">85%</span>
                             </div>
                         </div>
                         <div class="skills__data">
@@ -184,18 +196,7 @@ $(".laoder").hide();
                                 <span class="skills__percentage">65%</span>
                             </div>
                         </div>
-                        <div class="skills__data">
-                            <div class="skills__names">
-                                <i class='bx bxl-javascript skills__icon'></i>
-                                <span class="skills__name">ReactJs/Javascript</span>
-                            </div>
-                            <div class="skills__bar skills__js">
-                                
-                            </div>
-                            <div>
-                                <span class="skills__percentage">65%</span>
-                            </div>
-                        </div>
+                        
                     </div>
                     
                     <div>              
