@@ -10,6 +10,39 @@
     
 }
 
+.social-list {
+    list-style: none;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    
+}
+
+.personal_social {
+    margin-top: 45px; 
+}
+.personal_social li {
+    display: inline-block;
+    margin-right: 7px; 
+}
+.personal_social li:last-child {
+    margin-right: 0px; 
+}
+.personal_social li a {
+    line-height: 40px;
+    width: 40px;
+    background: #090909;
+    border-radius: 5px;
+    display: inline-block;
+    text-align: center;
+    color: #fff;
+    font-size: 16px; 
+}
+.personal_social li:hover a {
+    background-image: -moz-linear-gradient(0deg, #766dff 0%, #88f3ff 100%);
+    background-image: -webkit-linear-gradient(0deg, #766dff 0%, #88f3ff 100%);
+    background-image: -ms-linear-gradient(0deg, #766dff 0%, #88f3ff 100%); 
+}
+
 
 body {
     line-height: 1.5;
@@ -123,6 +156,10 @@ ul {
 
 .btn:hover {
     transform: scale(1.05);
+}
+
+.shadow-dark {
+    box-shadow: 0 0 20px rgba(48, 46, 77, 0.15);
 }
 
 .aside{
@@ -460,5 +497,85 @@ h3.my-profession {
     flex: 0 0 50%;
     max-width: 50%;
     margin-top: 30px;
-    background-color: red;
+}
+
+.about .about-content h3.title {
+    font-size: 24px;
+    margin-bottom: 30px;
+    font-weight: 700;
+    color: var(--text-black-900);
+}
+
+.about .about-content .timeline-box {
+    flex: 0 0 100%;
+    max-width: 100%;
+}
+
+.about .about-content .timeline {
+    padding: 30px 15px;
+    background-color: var(--bg-black-100);
+    border: 1px solid var(--bg-black-50);
+    border-radius: 10px;
+    width: 100%;
+    position: relative;
+}
+
+.about .about-content .timeline .timeline-item {
+    position: relative;
+    padding-left: 37px;
+    padding-bottom: 50px;
+}
+
+.about .about-content .timeline .timeline-item:last-child {
+    padding-bottom: 0;
+}
+
+
+.about .about-content .timeline .timeline-item::before {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 1px;
+    left: 7px;
+    top: 0;
+    background-color: var(--skin-color);
+}
+
+
+.about .about-content .timeline .circle-dot {
+    position: absolute;
+    height: 15px;
+    width: 15px;
+    left: 0;
+    top: 0;
+    border-radius: 50%;
+    background-color: var(--skin-color);
+}
+
+
+.about .about-content .timeline .timeline-date {
+    font-weight: 400;
+    font-size: 14px;
+    margin-bottom: 12px;
+    color: var(--text-black-700);
+}
+
+.about .about-content .timeline .timeline-date .fa {
+    margin-right: 5px;
+}
+
+.about .about-content .timeline .timeline-title {
+    font-weight: 700;
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: var(--text-black-900);
+    text-transform: capitalize;
+}
+
+
+.about .about-content .timeline .timeline-text {
+    line-height: 25px;
+    font-size: 16px;
+    color: var(--text-black-700);
+    text-align: justify;
 }
