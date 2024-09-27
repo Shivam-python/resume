@@ -10,6 +10,16 @@
     
 }
 
+body.dark
+{
+    --bg-black-900 : #151515;
+    --bg-black-100 : #222222;
+    --bg-black-50 : #393939;
+    --text-black-900 : #ffffff;
+    --text-black-700 : #e9e9e9;
+    
+}
+
 .social-list {
     list-style: none;
     margin-top: 10px;
@@ -42,6 +52,7 @@
     background-image: -webkit-linear-gradient(0deg, #766dff 0%, #88f3ff 100%);
     background-image: -ms-linear-gradient(0deg, #766dff 0%, #88f3ff 100%); 
 }
+
 
 
 body {
