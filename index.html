@@ -3,563 +3,344 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Shivam Pathak</title>
-    <!-- CSS Files -->
-     <link rel="stylesheet" href="root/css/style.css" type="text/css"/>
-     <link rel="stylesheet" href="root/css/skins/color-1.css" type="text/css"/>
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" type="text/css"/>
-
-	 <!-- Style Switcher -->
-	 <link rel="stylesheet" href="root/css/skins/color-1.css" type="text/css" class="alternate-style" title="color-1" disabled/>
-	 <link rel="stylesheet" href="root/css/skins/color-2.css" type="text/css" class="alternate-style" title="color-2" disabled/>
-	 <link rel="stylesheet" href="root/css/skins/color-3.css" type="text/css" class="alternate-style" title="color-3" disabled/>
-	 <link rel="stylesheet" href="root/css/skins/color-4.css" type="text/css" class="alternate-style" title="color-4" disabled/>
-	 <link rel="stylesheet" href="root/css/skins/color-5.css" type="text/css" class="alternate-style" title="color-5" disabled/>
-	 <link rel="stylesheet" href="root/css/style-switcher.css" type="text/css"/>
-	 <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.1.0/typed.umd.js" integrity="sha512-+2pW8xXU/rNr7VS+H62aqapfRpqFwnSQh9ap6THjsm41AxgA0MhFRtfrABS+Lx2KHJn82UOrnBKhjZOXpom2LQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <title>Shivam Pathak | Senior Backend Developer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+        
+        /* Core scroll fix */
+        html, body { max-width: 100vw; overflow-x: hidden; font-family: 'Plus Jakarta Sans', sans-serif; scroll-behavior: smooth; }
+        
+        /* Glassmorphism */
+        .glass-nav { background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(226, 232, 240, 0.8); }
+        .glass-card { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(10px); }
+        
+        /* Gradients & Animations */
+        .gradient-text { background: linear-gradient(135deg, #10b981, #0ea5e9); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .bg-glow { position: absolute; max-width: 100vw; width: 600px; height: 600px; background: radial-gradient(circle, rgba(16,185,129,0.08) 0%, rgba(255,255,255,0) 70%); top: -100px; right: -50px; z-index: -1; pointer-events: none; }
+        
+        /* Skill Badges */
+        .skill-badge { transition: all 0.3s ease; border: 1px solid #e2e8f0; background: white; }
+        .skill-badge:hover { transform: translateY(-3px); border-color: #10b981; box-shadow: 0 4px 12px rgba(16, 185, 129, 0.1); }
+        
+        /* Ladder/Timeline Elements */
+        .timeline-dot { transition: all 0.3s ease; }
+        .timeline-item:hover .timeline-dot { transform: scale(1.3); background-color: #10b981; ring-color: #d1fae5; }
+        
+        /* Profile Image Container fixed sizing to prevent layout shifts */
+        .profile-img-container {
+            width: 340px;
+            height: 340px;
+            flex-shrink: 0;
+            border-radius: 50%; /* Circle crop. Change to 1rem or 16px for a square with rounded corners */
+            overflow: hidden;
+            border: 4px solid white;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .profile-img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Crucial: Ensures image fills the container without squishing */
+        }
+        @media (max-width: 768px) {
+            .profile-img-container { width: 180px; height: 180px; }
+        }
+    </style>
 </head>
-<body class="dark">
+<body class="bg-slate-50 text-slate-900 relative w-full">
 
-    <!-- Main container start -->
+    <div class="bg-glow"></div>
 
-    <div class="main-content">
-        <!-- Aside start -->
-        <div class="aside">
-            <div class="logo">
-                <a href="#"><span>Py</span>Craft</a>
+    <nav class="fixed w-full z-50 glass-nav transition-all duration-300">
+        <div class="max-w-6xl mx-auto px-5 md:px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-extrabold tracking-tighter text-slate-900 hover:opacity-80 transition">
+                Shivam Pathak<span class="text-emerald-500">.</span>
+            </a>
+            
+            <div class="hidden md:flex space-x-8 text-xs font-bold uppercase tracking-widest text-slate-500">
+                <a href="#about" class="hover:text-emerald-500 transition"><i class="fa-regular fa-user mr-1"></i> About</a>
+                <a href="#skills" class="hover:text-emerald-500 transition"><i class="fa-solid fa-server mr-1"></i> Skills</a>
+                <a href="#experience" class="hover:text-emerald-500 transition"><i class="fa-solid fa-briefcase mr-1"></i> Experience</a>
+                <a href="#projects" class="hover:text-emerald-500 transition"><i class="fa-solid fa-code-branch mr-1"></i> Systems</a>
             </div>
-            <div class="nav-toggler">
-                <span>
 
-                </span>
-            </div>
-            <ul class="nav">
-                <li><a href="#home" class="active"><i class="fa fa-home"></i>Home</a></li>
-                <li><a href="#about"><i class="fa fa-user"></i>About</a></li>
-                <li><a href="#service"><i class="fa fa-list"></i>Services</a></li>
-                <!-- <li><a href="#portfolio"><i class="fa fa-briefcase"></i>Portfolio</a></li> -->
-                <li><a href="#contact"><i class="fa fa-comments"></i>Contact</a></li>
-
-            </ul>
+            <button id="mobile-menu-btn" class="md:hidden text-slate-600 text-2xl focus:outline-none p-2">
+                <i class="fa-solid fa-bars"></i>
+            </button>
         </div>
-        <!-- Aside end -->
 
-        <!-- Main content start -->
-         <div class="main-content">
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-slate-200 px-5 py-4 flex flex-col space-y-4 shadow-xl">
+            <a href="#about" class="text-sm font-bold uppercase tracking-widest text-slate-600 hover:text-emerald-500"><i class="fa-regular fa-user mr-2 w-4"></i> About</a>
+            <a href="#skills" class="text-sm font-bold uppercase tracking-widest text-slate-600 hover:text-emerald-500"><i class="fa-solid fa-server mr-2 w-4"></i> Skills</a>
+            <a href="#experience" class="text-sm font-bold uppercase tracking-widest text-slate-600 hover:text-emerald-500"><i class="fa-solid fa-briefcase mr-2 w-4"></i> Experience</a>
+            <a href="#projects" class="text-sm font-bold uppercase tracking-widest text-slate-600 hover:text-emerald-500"><i class="fa-solid fa-code-branch mr-2 w-4"></i> Systems</a>
+            <a href="#contact" class="text-sm font-bold uppercase tracking-widest text-emerald-500"><i class="fa-regular fa-envelope mr-2 w-4"></i> Contact</a>
+        </div>
+    </nav>
 
-            <!-- Home section start -->
-            <section class="home active section" id="home">
-                <div class="container">
-                    <div class="row">
-                        <div class="home-info">
-                            <h3 class="hello">Hello, My name is <span class="name">Shivam Pathak</span></h3>
-                            <h3 class="my-profession">I'm a <span class="typing">Backend Developer</span></h3>
-                            <p>
-                                Backend Developer skilled in Python (Programming Language), REST API, Django, Docker, Data Analytics, developing & deploying robust large scale backend systems over cloud platforms like AWS, GCP & Azure
-                            </p>
-							<ul class="social-list personal_social" id="personal_social">
-								<li><a target="_blank" class="dark" title="Go to Github" href="https://github.com/Shivam-python"><i class="fa-brands fa-github"></i></a></li>
-								<li><a target="_blank" class="dark" title="Go to Medium" href="https://medium.com/@raynoldw222"><i class="fa-brands fa-medium"></i></a></li>
-								<li><a target="_blank" class="dark" title="Go to LinkedIn" href="https://www.linkedin.com/in/shivam-pathak-471015194/"><i class="fa-brands fa-linkedin"></i></a></li>
-							</ul>
-                            <a href="https://drive.google.com/file/d/1fFKGJbTPheHQojNLsLnHvAuKChgVWQek/view?usp=sharing" target="_blank" class="btn">Down;oad CV</a>
-                        </div>
-                        <div class="home-img">
-                            <img src="root/images/hero.jpeg" alt="">
-                        </div>
-                    </div>
-
-                </div>
-            </section>
-
-            <!-- Home section end -->
-
-            <!-- About Section start -->
-
-            <section class="about section" id="about">
-                <div class="container">
-                    <div class="row">
-                        <div class="section-title">
-                            <h2>About Me</h2>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="about-content padd-15">
-                            <div class="row">
-                                <div class="about-text padd-15">
-                                    <h3>
-                                        I'm Shivam Pathak <span>Backend Web Developer</span>
-                                    </h3>
-                                    <p>
-                                        Senior Backend Developer with 4+ years of experience in building and optimizing scalable backend systems for high-growth startups. Proficient in Python, Django, REST APIs, FastAPI, AWS cloud services and Apache Kafka, I specialize in enhancing transaction processes, data management, and system reliability. My experience spans leading complex projects, from developing Auto Debit and subscription services to integrating insurance products and streamlining payment solutions. 
-
-Passionate about driving innovation, I focus on delivering efficient, secure, and user-centric backend solutions that propel business success. Always eager to explore new challenges and contribute to impactful projects.
-                                    </p>
-                                    
-                                    <p>In addition to my technical skills, I've experience managing teams, communicating and collaborating with cross-functional teams to deliver impactful solutions.</p>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="personal-info padd-15">
-                                    <div class="row">
-                                        <div class="info-item padd-15">
-                                            <p>Birthday : <span> 13 July 1998</span></p>
-                                        </div>
-                                        <div class="info-item padd-15">
-                                            <p>Contact : <span> +91 7415276870</span></p>
-                                        </div>
-                                        <div class="info-item padd-15">
-                                            <p>Email : <span> raynoldw222@gmail.com</span></p>
-                                        </div>
-                                        <div class="info-item padd-15">
-                                            <p>City : <span> Mumbai, Maharashtra</span></p>
-                                        </div>
-                                        <div class="info-item padd-15">
-                                            <p>Country : <span> India</span></p>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="buttons padd-15">
-                                            <a href="#contact" data-section-index="1" class="btn hire-me">Hire Me</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="skills padd-15">
-                                    <div class="row">
-                                        <div class="skill-item padd-15">
-                                            <h5>Python</h5>
-                                            <div class="progress">
-                                                <div class="progress-in" style="width: 75%;"></div>
-                                                <div class="skill-percent">7.5/10</div>
-                                            </div>
-                                        </div>
-                                        <div class="skill-item padd-15">
-                                            <h5>Django & REST APIs</h5>
-                                            <div class="progress">
-                                                <div class="progress-in" style="width: 70%;"></div>
-                                                <div class="skill-percent">7/10</div>
-                                            </div>
-                                        </div>
-                                        <div class="skill-item padd-15">
-                                            <h5>Databases (Mysql, Postgres, MongoDB, Redis)</h5>
-                                            <div class="progress">
-                                                <div class="progress-in" style="width: 60%;"></div>
-                                                <div class="skill-percent">6/10</div>
-                                            </div>
-                                        </div>
-                                        <div class="skill-item padd-15">
-                                            <h5>Docker & Cloud Services (AWS, GCP)</h5>
-                                            <div class="progress">
-                                                <div class="progress-in" style="width: 50%;"></div>
-                                                <div class="skill-percent">5/10</div>
-                                            </div>
-                                        </div>
-                                        <div class="skill-item padd-15">
-                                            <h5>Apache Airflow</h5>
-                                            <div class="progress">
-                                                <div class="progress-in" style="width: 50%;"></div>
-                                                <div class="skill-percent">5/10</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-							<div class="row">
-								<div class="experience padd-15">
-									<h3 class="title">Experience</h3>
-									<div class="row">
-										<div class="timeline-box padd-15">
-											<div class="timeline shadow-dark">
-												<!--======== timeline item =========== -->
-
-												<div class="timeline-item">
-													<div class="circle-dot"></div>
-														<h3 class="timeline-date">
-															<i class="fa fa-calendar"></i> May 2023 - Present
-														</h3>
-														<h4>SDE-2 : Senior Software Engineer</h4>
-														<p class="timeline-text">GrayQuest Education Finance Pvt Ltd<br>Mumbai, India</p>	
-												</div>
-
-												<div class="timeline-item">
-													<div class="circle-dot"></div>
-													<h3 class="timeline-date">
-														<i class="fa fa-calendar"></i> Dec 2022 - May 2023
-													</h3>
-													<h4>SDE-1 : Backend Developer</h4>
-													<p class="timeline-text">Zopper : Solvy Tech Solutions Pvt Ltd <br>Kolkata, India</p>
-												</div>
-
-												<div class="timeline-item">
-													<div class="circle-dot"></div>
-													<h3 class="timeline-date">
-														<i class="fa fa-calendar"></i> Feb 2022 - Dec 2022
-													</h3>
-													<h4>SDE-1 : Backend Developer</h4>
-													<p class="timeline-text">Fleet technologies Pvt Ltd <br> Bangalore, India</p>
-												</div>
-
-												<div class="timeline-item">
-													<div class="circle-dot"></div>
-													<h3 class="timeline-date">
-														<i class="fa fa-calendar"></i> Aug 2020 - Feb 2022
-													</h3>
-													<h4>SDE-1 : Python Developer</h4>
-													<p class="timeline-text">SkylarMinds<br> Indore, India</p>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="education padd-15">
-									<h3 class="title">Education</h3>
-									<div class="row">
-										<div class="timeline-box padd-15">
-											<div class="timeline shadow-dark">
-												<!--======== timeline item =========== -->
-
-												<div class="timeline-item">
-													<div class="circle-dot"></div>
-														<h3 class="timeline-date">
-															<i class="fa fa-calendar"></i> 2016 - 2020
-														</h3>
-														<h4>Bachelor's in Engineering : Computer Science</h4>
-														<p class="timeline-text">Sagar institute of Reserach & Technology with 7.54/10 CGPA</p>
-													
-												</div>
-
-												<div class="timeline-item">
-													<div class="circle-dot"></div>
-													<h3 class="timeline-date">
-														<i class="fa fa-calendar"></i> 2021
-													</h3>
-													<h4>REST API certification</h4>
-													<p class="timeline-text">REST API intermediate level certification by Hackerrank</p>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-								
-							</div>
-
-                        </div>
+    <section id="about" class="pt-32 md:pt-40 pb-16 md:pb-20 px-5 md:px-6 relative">
+        <div class="max-w-5xl mx-auto flex flex-col-reverse md:flex-row items-center md:justify-between gap-10 md:gap-6">
+            
+            <div class="max-w-2xl text-center md:text-left">
+                <span class="inline-flex items-center px-4 py-1.5 mb-6 text-[10px] sm:text-xs font-bold tracking-widest text-emerald-700 uppercase bg-emerald-100 rounded-full border border-emerald-200">
+                    <i class="fa-solid fa-terminal mr-2"></i> Senior Python Developer
+                </span>
+                <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold mb-6 tracking-tight leading-tight">
+                    Architecting <br class="hidden lg:block" /> <span class="gradient-text">Scalable Backend</span> Systems.
+                </h1>
+                <p class="text-base sm:text-lg md:text-xl text-slate-600 mb-10 leading-relaxed font-medium">
+                    Over 5 years of experience specializing in event-driven microservices, expert-level SQL optimization, and distributed tools. I build high-performance financial systems that scale.
+                </p>
+                <div class="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-6">
+                    <a href="mailto:raynoldw222@gmail.com" class="group bg-slate-900 text-white px-8 py-4 rounded-full font-bold hover:bg-emerald-600 transition shadow-xl shadow-slate-900/20 flex items-center justify-center w-full sm:w-auto">
+                        Get in Touch <i class="fa-solid fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                    <div class="flex space-x-6 text-2xl text-slate-400 pl-2 sm:pl-0">
+                        <a href="https://www.linkedin.com/in/shivam-pathak-471015194/" target="_blank" class="hover:text-[#0A66C2] transition" title="Visit LinkedIn Profile"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://github.com/Shivam-python" target="_blank" title="Go to GitHub" class="hover:text-slate-900 transition"><i class="fab fa-github"></i></a>
+                        <a href="https://www.hackerrank.com/profile/raynoldw222" title="Visit Hackerrank Profile" target="_blank" class="hover:text-emerald-500 transition"><i class="fab fa-hackerrank"></i></a>
+                        <a target="_blank" class="dark hover:text-slate-900 transition" title="Go to Medium" href="https://medium.com/@raynoldw222"><i class="fa-brands fa-medium"></i></a>
                     </div>
                 </div>
-            </section>
+            </div>
 
-			<!-- About Section end -->
+            <div class="profile-img-container">
+                <!-- <img src="https://ui-avatars.com/api/?name=Shivam+Pathak&background=10b981&color=fff&size=512" alt="Shivam Pathak"> -->
+                 <img src="root/images/profile.jpeg" alt="Shivam Pathak">
+            </div>
 
-			<!-- Services Section Starts -->
-			 <section class="service section" id="service">
-				<div class="container">
-					<div class="row">
-						<div class="section-title padd-15">
-							<h2>Services</h2>
-						</div>
-					</div>
-					<div class="row">
-						<!-- Service Item starts here -->
+        </div>
+    </section>
 
-						<div class="service-item padd-15">
-							<div class="service-item-inner">
-								<div class="icon">
-									<i class="fa fa-laptop-code"></i>
-								</div>
-								<h4> Backend Development & API Design</h4>
-								<p>Design and implement RESTful APIs, handle CRUD operations, manage databases, and optimize server-side performance for various applications.</p>
-							</div>
-						</div>
-						<!-- Service item ends here -->
+    <section id="skills" class="py-16 md:py-24 bg-white border-y border-slate-200">
+        <div class="max-w-6xl mx-auto px-5 md:px-6">
+            <div class="flex items-center justify-center mb-12 md:mb-16">
+                <div class="h-px bg-slate-200 flex-1 max-w-[40px] md:max-w-[100px]"></div>
+                <h2 class="text-xs sm:text-sm font-black uppercase tracking-[0.2em] sm:tracking-[0.3em] text-emerald-600 px-4 text-center"><i class="fa-solid fa-microchip mr-2"></i> Technical Arsenal</h2>
+                <div class="h-px bg-slate-200 flex-1 max-w-[40px] md:max-w-[100px]"></div>
+            </div>
 
-						<!-- Service Item starts here -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
+                
+                <div class="bg-slate-50 p-6 md:p-8 rounded-2xl border border-slate-100">
+                    <h3 class="text-lg md:text-xl font-bold mb-6 flex items-center text-slate-800"><i class="fa-brands fa-python mr-3 text-emerald-500 text-2xl"></i> Core Stack</h3>
+                    <div class="flex flex-wrap gap-2 md:gap-3">
+                        <span class="skill-badge px-3 py-2 md:px-4 rounded-lg text-sm font-semibold text-slate-700"><i class="fa-brands fa-python text-emerald-600 mr-1"></i> Python (Advanced)</span>
+                        <span class="skill-badge px-3 py-2 md:px-4 rounded-lg text-sm font-semibold text-slate-700">Django & DRF</span>
+                        <span class="skill-badge px-3 py-2 md:px-4 rounded-lg text-sm font-semibold text-slate-700">FastAPI</span>
+                        <span class="skill-badge px-3 py-2 md:px-4 rounded-lg text-sm font-semibold text-slate-700">Flask</span>
+                        <span class="skill-badge px-3 py-2 md:px-4 rounded-lg text-sm font-semibold text-slate-700"><i class="fa-brands fa-golang text-cyan-600 mr-1"></i> Go (Basic)</span>
+                    </div>
+                </div>
 
-						<div class="service-item padd-15">
-							<div class="service-item-inner">
-								<div class="icon">
-									<i class="fa fa-sitemap"></i>
-								</div>
-								<h4> System Architecture Design</h4>
-								<p>Plan and develop architectures for distributed systems, including microservices, cloud integrations, and event-driven architectures, ensuring scalability and maintainability.</p>
-							</div>
-						</div>
-						<!-- Service item ends here -->
+                <div class="bg-slate-50 p-6 md:p-8 rounded-2xl border border-slate-100">
+                    <h3 class="text-lg md:text-xl font-bold mb-6 flex items-center text-slate-800"><i class="fa-solid fa-database mr-3 text-emerald-500"></i> Data Storage</h3>
+                    <div class="flex flex-wrap gap-2 md:gap-3">
+                        <span class="skill-badge px-3 py-2 md:px-4 rounded-lg text-sm font-semibold text-slate-700">SQL (Optimization)</span>
+                        <span class="skill-badge px-3 py-2 md:px-4 rounded-lg text-sm font-semibold text-slate-700">PostgreSQL</span>
+                        <span class="skill-badge px-3 py-2 md:px-4 rounded-lg text-sm font-semibold text-slate-700">MySQL</span>
+                        <span class="skill-badge px-3 py-2 md:px-4 rounded-lg text-sm font-semibold text-slate-700 text-red-500"><i class="fa-solid fa-server mr-1"></i> Redis</span>
+                        <span class="skill-badge px-3 py-2 md:px-4 rounded-lg text-sm font-semibold text-slate-700">MongoDB</span>
+                        <span class="skill-badge px-3 py-2 md:px-4 rounded-lg text-sm font-semibold text-slate-700">DynamoDB</span>
+                    </div>
+                </div>
 
-						<!-- Service Item starts here -->
+                <div class="bg-slate-50 p-6 md:p-8 rounded-2xl border border-slate-100 lg:col-span-1 md:col-span-2">
+                    <h3 class="text-lg md:text-xl font-bold mb-6 flex items-center text-slate-800"><i class="fa-solid fa-network-wired mr-3 text-emerald-500"></i> Infra & Messaging</h3>
+                    <div class="flex flex-wrap gap-2 md:gap-3">
+                        <span class="skill-badge px-3 py-2 md:px-4 rounded-lg text-sm font-semibold text-slate-700"><i class="fa-brands fa-aws text-orange-500 mr-1"></i> AWS (EC2, S3, RDS)</span>
+                        <span class="skill-badge px-3 py-2 md:px-4 rounded-lg text-sm font-semibold text-slate-700"><i class="fa-brands fa-docker text-blue-500 mr-1"></i> Docker</span>
+                        <span class="skill-badge px-3 py-2 md:px-4 rounded-lg text-sm font-semibold text-slate-700">Apache Airflow</span>
+                        <span class="skill-badge px-3 py-2 md:px-4 rounded-lg text-sm font-semibold text-slate-700">Kafka</span>
+                        <span class="skill-badge px-3 py-2 md:px-4 rounded-lg text-sm font-semibold text-slate-700">Celery</span>
+                        <span class="skill-badge px-3 py-2 md:px-4 rounded-lg text-sm font-semibold text-slate-700">RabbitMQ</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-8 bg-slate-900 text-white p-6 rounded-2xl flex flex-col md:flex-row items-center justify-between gap-4 border border-slate-800 shadow-lg">
+                <div class="flex items-center gap-3">
+                    <i class="fa-solid fa-sitemap text-emerald-400 text-2xl"></i>
+                    <p class="font-bold text-sm md:text-base">Event-Driven Architecture & Microservices</p>
+                </div>
+                <div class="flex items-center gap-3">
+                    <i class="fa-solid fa-brain text-purple-400 text-2xl"></i>
+                    <p class="font-bold text-sm md:text-base">AI Integration: OpenAI APIs, RAG, LLM</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-						<div class="service-item padd-15">
-							<div class="service-item-inner">
-								<div class="icon">
-									<i class="fa fa-cloud"></i>
-								</div>
-								<h4> Cloud Infrastructure & DevOps</h4>
-								<p>Set up, configure, and manage cloud environments using AWS services (EC2, S3, RDS, Lambda). Docker for containerized deployments.</p>
-							</div>
-						</div>
-						<!-- Service item ends here -->
+    <section id="experience" class="py-16 md:py-24 px-5 md:px-6 bg-slate-50">
+        <div class="max-w-3xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-black mb-12 md:mb-16 tracking-tight text-center"><i class="fa-solid fa-chart-line text-emerald-600 mr-3"></i> Career Progression</h2>
+            
+            <div class="relative border-l-2 md:border-l-4 border-emerald-200 ml-3 md:ml-8 space-y-10 md:space-y-12 pb-8">
+                
+                <div class="relative pl-6 md:pl-10 timeline-item">
+                    <div class="timeline-dot absolute w-4 h-4 md:w-5 md:h-5 bg-emerald-500 rounded-full -left-[9px] md:-left-[12px] top-1.5 ring-4 ring-emerald-50 shadow-md"></div>
+                    <span class="inline-block py-1 px-3 rounded-md bg-emerald-600 text-white text-[10px] md:text-xs font-bold uppercase tracking-widest mb-3 shadow-sm">May 2023 — Present</span>
+                    <h3 class="text-xl md:text-2xl font-bold text-slate-900 flex items-center">SDE 2 - Backend Developer</h3>
+                    <p class="text-emerald-600 font-bold mb-4 flex flex-wrap items-center text-xs md:text-sm mt-1 gap-y-2"><i class="fa-solid fa-building mr-2"></i> GrayQuest <span class="hidden sm:inline">&nbsp;•&nbsp;</span><span class="sm:hidden w-full"></span> <i class="fa-solid fa-location-dot sm:mx-1 mr-1"></i> Mumbai</p>
+                    <div class="bg-white p-5 md:p-6 rounded-xl shadow-sm border border-slate-200 text-slate-600 leading-relaxed space-y-3 text-sm md:text-base">
+                        <p class="flex items-start"><i class="fa-solid fa-check text-emerald-500 mt-1 mr-3 flex-shrink-0"></i> <span>Architected auto-debit & subscription services using Redis/Celery ensuring 100% data consistency.</span></p>
+                        <p class="flex items-start"><i class="fa-solid fa-check text-emerald-500 mt-1 mr-3 flex-shrink-0"></i> <span>Led technical design and estimation for microservice refactoring in Agile sprints.</span></p>
+                        <p class="flex items-start"><i class="fa-solid fa-check text-emerald-500 mt-1 mr-3 flex-shrink-0"></i> <span>Modernized ETL pipelines via Apache Airflow and SQL tuning, achieving a 35% reduction in extraction time.</span></p>
+                    </div>
+                </div>
 
-						<!-- Service Item starts here -->
+                <div class="relative pl-6 md:pl-10 timeline-item">
+                    <div class="timeline-dot absolute w-4 h-4 md:w-5 md:h-5 bg-slate-300 rounded-full -left-[9px] md:-left-[12px] top-1.5 ring-4 ring-slate-50"></div>
+                    <span class="inline-block py-1 px-3 rounded-md bg-slate-200 text-slate-600 text-[10px] md:text-xs font-bold uppercase tracking-widest mb-3">Dec 2022 — May 2023</span>
+                    <h3 class="text-xl md:text-2xl font-bold text-slate-900">SDE 1 - Backend Developer</h3>
+                    <p class="text-slate-500 font-semibold mb-4 flex flex-wrap items-center text-xs md:text-sm mt-1 gap-y-2"><i class="fa-solid fa-building mr-2"></i> Zopper <span class="hidden sm:inline">&nbsp;•&nbsp;</span><span class="sm:hidden w-full"></span> <i class="fa-solid fa-location-dot sm:mx-1 mr-1"></i> Kolkata</p>
+                    <div class="bg-white p-5 md:p-6 rounded-xl shadow-sm border border-slate-200 text-slate-600 leading-relaxed text-sm md:text-base space-y-3">
+                        <p class="flex items-start"><span class="text-emerald-500 mt-0.5 mr-3 flex-shrink-0">▹</span> Developed high-throughput APIs for diversified insurance portfolios (Travel, Health, Life).</p>
+                        <p class="flex items-start"><span class="text-emerald-500 mt-0.5 mr-3 flex-shrink-0">▹</span> Engineered a paperless policy delivery system, cutting integration/onboarding time by 30%.</p>
+                    </div>
+                </div>
 
-						<div class="service-item padd-15">
-							<div class="service-item-inner">
-								<div class="icon">
-									<i class="fa fa-database"></i>
-								</div>
-								<h4> Database Design & Optimization</h4>
-								<p>Create and optimize relational (SQL) and non-relational (NoSQL) database schemas (MongoDB), improving query performance, and ensuring data integrity and efficiency.</p>
-							</div>
-						</div>
-						<!-- Service item ends here -->
+                <div class="relative pl-6 md:pl-10 timeline-item">
+                    <div class="timeline-dot absolute w-4 h-4 md:w-5 md:h-5 bg-slate-300 rounded-full -left-[9px] md:-left-[12px] top-1.5 ring-4 ring-slate-50"></div>
+                    <span class="inline-block py-1 px-3 rounded-md bg-slate-200 text-slate-600 text-[10px] md:text-xs font-bold uppercase tracking-widest mb-3">Feb 2022 — Dec 2022</span>
+                    <h3 class="text-xl md:text-2xl font-bold text-slate-900">SDE 1 - Back End Development</h3>
+                    <p class="text-slate-500 font-semibold mb-4 flex flex-wrap items-center text-xs md:text-sm mt-1 gap-y-2"><i class="fa-solid fa-building mr-2"></i> Fleek <span class="hidden sm:inline">&nbsp;•&nbsp;</span><span class="sm:hidden w-full"></span> <i class="fa-solid fa-location-dot sm:mx-1 mr-1"></i> Bangalore</p>
+                    <div class="bg-white p-5 md:p-6 rounded-xl shadow-sm border border-slate-200 text-slate-600 leading-relaxed text-sm md:text-base space-y-3">
+                        <p class="flex items-start"><span class="text-emerald-500 mt-0.5 mr-3 flex-shrink-0">▹</span> Integrated payment gateways and optimized SQL/Python logic to reduce latency by 20%.</p>
+                        <p class="flex items-start"><span class="text-emerald-500 mt-0.5 mr-3 flex-shrink-0">▹</span> Designed gamified subscription models improving user engagement by 15%.</p>
+                    </div>
+                </div>
 
+                <div class="relative pl-6 md:pl-10 timeline-item">
+                    <div class="timeline-dot absolute w-4 h-4 md:w-5 md:h-5 bg-slate-300 rounded-full -left-[9px] md:-left-[12px] top-1.5 ring-4 ring-slate-50"></div>
+                    <span class="inline-block py-1 px-3 rounded-md bg-slate-200 text-slate-600 text-[10px] md:text-xs font-bold uppercase tracking-widest mb-3">Aug 2020 — Feb 2022</span>
+                    <h3 class="text-xl md:text-2xl font-bold text-slate-900">Backend Developer</h3>
+                    <p class="text-slate-500 font-semibold mb-4 flex flex-wrap items-center text-xs md:text-sm mt-1 gap-y-2"><i class="fa-solid fa-building mr-2"></i> Skylar Minds <span class="hidden sm:inline">&nbsp;•&nbsp;</span><span class="sm:hidden w-full"></span> <i class="fa-solid fa-location-dot sm:mx-1 mr-1"></i> Indore</p>
+                    <div class="bg-white p-5 md:p-6 rounded-xl shadow-sm border border-slate-200 text-slate-600 leading-relaxed text-sm md:text-base space-y-3">
+                        <p class="flex items-start"><span class="text-emerald-500 mt-0.5 mr-3 flex-shrink-0">▹</span> Designed secure, cloud-native backend systems (Django) for finance and cybersecurity.</p>
+                        <p class="flex items-start"><span class="text-emerald-500 mt-0.5 mr-3 flex-shrink-0">▹</span> Engineered automated multi-channel campaigns (SMS/WhatsApp/IVR) increasing collection rates by 10%.</p>
+                    </div>
+                </div>
 
+            </div>
+        </div>
+    </section>
 
-						<!-- Service Item starts here -->
+    <section id="projects" class="py-16 md:py-24 bg-slate-900 text-white px-5 md:px-6">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-black mb-12 md:mb-16 tracking-tight text-center"><i class="fa-solid fa-cubes text-emerald-400 mr-3"></i> Core Systems Architected</h2>
+            <div class="grid md:grid-cols-2 gap-6 md:gap-8">
+                
+                <div class="glass-card border border-slate-700/50 p-6 md:p-8 rounded-3xl hover:border-emerald-500/50 hover:bg-slate-800 transition-all group shadow-lg flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="text-emerald-400 text-[10px] sm:text-xs font-bold uppercase tracking-widest bg-emerald-900/30 px-3 py-1 rounded-full"><i class="fa-solid fa-money-bill-transfer mr-1"></i> FinTech Infrastructure</span>
+                        </div>
+                        <h3 class="text-xl md:text-2xl font-bold mb-3 text-white">Auto-Debit & Subscription Engine</h3>
+                        <p class="text-slate-400 mb-6 md:mb-8 leading-relaxed text-sm">Scaled financial services ensuring 100% data consistency via idempotent/retry patterns. Integrated multiple payment gateways and "Pay Later" methods.</p>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-2 md:px-3 py-1 bg-slate-800 border border-slate-700 rounded text-[10px] md:text-xs text-slate-300 font-mono">Redis</span>
+                        <span class="px-2 md:px-3 py-1 bg-slate-800 border border-slate-700 rounded text-[10px] md:text-xs text-slate-300 font-mono">Celery</span>
+                        <span class="px-2 md:px-3 py-1 bg-slate-800 border border-slate-700 rounded text-[10px] md:text-xs text-slate-300 font-mono">Python</span>
+                    </div>
+                </div>
 
-						<div class="service-item padd-15">
-							<div class="service-item-inner">
-								<div class="icon">
-									<i class="fa fa-chart-simple"></i>
-								</div>
-								<h4> Data Analysis, ETL & Workflow Automation</h4>
-								<p>Design and deploy efficient data pipelines, automate workflows, enable smooth data processing and analytics.</p>
-							</div>
-						</div>
-						<!-- Service item ends here -->
+                <div class="glass-card border border-slate-700/50 p-6 md:p-8 rounded-3xl hover:border-emerald-500/50 hover:bg-slate-800 transition-all group shadow-lg flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="text-emerald-400 text-[10px] sm:text-xs font-bold uppercase tracking-widest bg-emerald-900/30 px-3 py-1 rounded-full"><i class="fa-solid fa-server mr-1"></i> API Development</span>
+                        </div>
+                        <h3 class="text-xl md:text-2xl font-bold mb-3 text-white">Insurance Policy Pipelines</h3>
+                        <p class="text-slate-400 mb-6 md:mb-8 leading-relaxed text-sm">Developed high-throughput APIs for diversified insurance portfolios (Travel, Health, Life), optimizing quote-to-delivery pipelines for real-time performance.</p>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-2 md:px-3 py-1 bg-slate-800 border border-slate-700 rounded text-[10px] md:text-xs text-slate-300 font-mono">FastAPI</span>
+                        <span class="px-2 md:px-3 py-1 bg-slate-800 border border-slate-700 rounded text-[10px] md:text-xs text-slate-300 font-mono">Microservices</span>
+                    </div>
+                </div>
 
-						<!-- Service Item starts here -->
+                <div class="glass-card border border-slate-700/50 p-6 md:p-8 rounded-3xl hover:border-emerald-500/50 hover:bg-slate-800 transition-all group shadow-lg flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="text-emerald-400 text-[10px] sm:text-xs font-bold uppercase tracking-widest bg-emerald-900/30 px-3 py-1 rounded-full"><i class="fa-solid fa-diagram-project mr-1"></i> Data Engineering</span>
+                        </div>
+                        <h3 class="text-xl md:text-2xl font-bold mb-3 text-white">Automated ETL Pipelines</h3>
+                        <p class="text-slate-400 mb-6 md:mb-8 leading-relaxed text-sm">Modernized infrastructure workflows via workflow orchestration, complex data transformation, and deep SQL tuning to dramatically reduce extraction time.</p>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-2 md:px-3 py-1 bg-slate-800 border border-slate-700 rounded text-[10px] md:text-xs text-slate-300 font-mono">Apache Airflow</span>
+                        <span class="px-2 md:px-3 py-1 bg-slate-800 border border-slate-700 rounded text-[10px] md:text-xs text-slate-300 font-mono">Pandas</span>
+                        <span class="px-2 md:px-3 py-1 bg-slate-800 border border-slate-700 rounded text-[10px] md:text-xs text-slate-300 font-mono">SQL</span>
+                    </div>
+                </div>
 
-						<div class="service-item padd-15">
-							<div class="service-item-inner">
-								<div class="icon">
-									<i class="fa fa-bullhorn"></i>
-								</div>
-								<h4> Mentoring & Code Reviews</h4>
-								<p>Provide guidance to junior developers, review code for best practices, performance, and security, and ensure that development standards are maintained across teams.</p>
-							</div>
-						</div>
-						<!-- Service item ends here -->
-					</div>
-				</div>
-			 </section>
+                <div class="glass-card border border-slate-700/50 p-6 md:p-8 rounded-3xl hover:border-emerald-500/50 hover:bg-slate-800 transition-all group shadow-lg flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="text-emerald-400 text-[10px] sm:text-xs font-bold uppercase tracking-widest bg-emerald-900/30 px-3 py-1 rounded-full"><i class="fa-solid fa-shield-halved mr-1"></i> Cloud & Security</span>
+                        </div>
+                        <h3 class="text-xl md:text-2xl font-bold mb-3 text-white">Cloud-Native Authentication Core</h3>
+                        <p class="text-slate-400 mb-6 md:mb-8 leading-relaxed text-sm">Designed secure backend systems integrating multi-factor authentication (MFA), OAuth2, and social logins for high-stakes finance & cybersecurity clients.</p>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-2 md:px-3 py-1 bg-slate-800 border border-slate-700 rounded text-[10px] md:text-xs text-slate-300 font-mono">Django</span>
+                        <span class="px-2 md:px-3 py-1 bg-slate-800 border border-slate-700 rounded text-[10px] md:text-xs text-slate-300 font-mono">OAuth2</span>
+                        <span class="px-2 md:px-3 py-1 bg-slate-800 border border-slate-700 rounded text-[10px] md:text-xs text-slate-300 font-mono">AWS</span>
+                    </div>
+                </div>
 
-			 <!-- Services Section End -->
+            </div>
+        </div>
+    </section>
 
-			 <!-- Portfolio Section Starts Here -->
+    <footer id="contact" class="py-16 md:py-24 px-5 md:px-6 text-center bg-white border-t border-slate-200">
+        <div class="max-w-2xl mx-auto flex flex-col items-center">
+            
+            <div class="w-14 h-14 md:w-16 md:h-16 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mb-6 text-xl md:text-2xl">
+                <i class="fa-solid fa-terminal"></i>
+            </div>
+            
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-black mb-6">Let's scale your backend.</h2>
+            <p class="text-slate-500 mb-10 font-medium text-sm md:text-base">B.E. Computer Science • Based in Mumbai, MH</p>
+            
+            <div class="w-full px-4 mb-8">
+                <a href="mailto:raynoldw222@gmail.com" class="inline-block text-xl sm:text-2xl md:text-3xl font-extrabold text-emerald-600 hover:text-emerald-800 transition border-b-4 border-emerald-200 hover:border-emerald-600 pb-1 break-all">
+                    raynoldw222@gmail.com
+                </a>
+            </div>
 
-			 <!-- <section class="portfolio section" id="portfolio">
-				<div class="container">
-					<div class="row">
-						<div class="section-title padd-15">
-							<h2>Portfolio</h2>
-						</div>
-					</div>
-					<div class="row">
-						<div class="portfolio-heading padd-15">
-							<h2>My latest projects : </h2>
-						</div>
-					</div>
-					<div class="row">
-						<!-- portfolio item start  -->
-						<div class="portfolio-item padd-15">
-							<div class="portfolio-item-inner shadow-dark">
-								<div class="portfolio-img">
-									<img src="root/images/profile.jpg" alt="">
+            <div class="flex flex-wrap justify-center gap-4 mt-4 text-xs font-bold text-slate-500 uppercase tracking-wider">
+                <span class="bg-slate-100 px-3 py-2 rounded-lg border border-slate-200"><i class="fab fa-hackerrank text-emerald-500 mr-1"></i> Python</span>
+                <span class="bg-slate-100 px-3 py-2 rounded-lg border border-slate-200"><i class="fab fa-hackerrank text-emerald-500 mr-1"></i> REST API</span>
+                <span class="bg-slate-100 px-3 py-2 rounded-lg border border-slate-200"><i class="fab fa-hackerrank text-emerald-500 mr-1"></i> Problem Solving</span>
+            </div>
+            
+            <div class="w-full mt-16 md:mt-20 pt-8 border-t border-slate-100 flex flex-col sm:flex-row justify-between items-center text-[10px] md:text-xs text-slate-400 uppercase tracking-widest font-bold gap-y-4">
+                <span>© 2026 Shivam Pathak</span>
+                <div class="flex items-center space-x-2">
+                    <span class="text-slate-500">Built for high performance.</span>
+                </div>
+            </div>
+        </div>
+    </footer>
 
-								</div>
-							</div>
-						</div>
-						<!-- portfolio item end here -->
+    <script>
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
 
-						<!-- portfolio item start  -->
-						<div class="portfolio-item padd-15">
-							<div class="portfolio-item-inner shadow-dark">
-								<div class="portfolio-img">
-									<img src="root/images/profile.jpg" alt="">
-
-								</div>
-							</div>
-						</div>
-						<!-- portfolio item end here -->
-
-						<!-- portfolio item start  -->
-						<div class="portfolio-item padd-15">
-							<div class="portfolio-item-inner shadow-dark">
-								<div class="portfolio-img">
-									<img src="root/images/profile.jpg" alt="">
-
-								</div>
-							</div>
-						</div>
-						<!-- portfolio item end here -->
-
-						<!-- portfolio item start  -->
-						<div class="portfolio-item padd-15">
-							<div class="portfolio-item-inner shadow-dark">
-								<div class="portfolio-img">
-									<img src="root/images/profile.jpg" alt="">
-
-								</div>
-							</div>
-						</div>
-						<!-- portfolio item end here -->
-
-						<!-- portfolio item start  -->
-						<div class="portfolio-item padd-15">
-							<div class="portfolio-item-inner shadow-dark">
-								<div class="portfolio-img">
-									<img src="root/images/profile.jpg" alt="">
-
-								</div>
-							</div>
-						</div>
-						<!-- portfolio item end here -->
-
-						<!-- portfolio item start  -->
-						<div class="portfolio-item padd-15">
-							<div class="portfolio-item-inner shadow-dark">
-								<div class="portfolio-img">
-									<img src="root/images/profile.jpg" alt="">
-
-								</div>
-							</div>
-						</div>
-						<!-- portfolio item end here -->
-
-					</div>
-				</div>
-			 </section> -->
-
-			 <!-- Portfolio section end  -->
-
-			 <!-- Contact Section Start -->
-			 <section class="contact section" id="contact">
-				<div class="container">
-					<div class="row">
-						<div class="section-title padd-15">
-							<h2>Contact Me</h2>
-						</div>
-					</div>
-					<h3 class="contact-title padd-15">Have any questions ?</h3>
-					<h4 class="contact-sub-title padd-15">I'M AT YOUR SERVICE</h4>
-					
-					<div class="row">
-						<!-- Contact info item start -->
-						 <div class="contact-info-item padd-15">
-							<div class="icon">
-								<i class="fa fa-phone"></i>
-							</div>
-							<h4>Call Me on : </h4>
-							<p>+91 7415276870</p>
-						 </div>
-						 <!-- Contact info item end -->
-
-						 <!-- Contact info item start -->
-						 <div class="contact-info-item padd-15">
-							<div class="icon">
-								<i class="fa fa-map-marker-alt"></i>
-							</div>
-							<h4>Address </h4>
-							<p>Mumbai India</p>
-						 </div>
-						 <!-- Contact info item end -->
-
-						 <!-- Contact info item start -->
-						 <div class="contact-info-item padd-15">
-							<div class="icon">
-								<i class="fa fa-envelope"></i>
-							</div>
-							<h4>Email : </h4>
-							<p>raynoldw222@gmail.com</p>
-						 </div>
-						 <!-- Contact info item end -->
-
-						 <!-- Contact info item start -->
-						 
-						 <!-- When you uncomment this contact section, change the max-width & flex to 25% -->
-						 
-						  <!-- <div class="contact-info-item padd-15">
-							<div class="icon">
-								<i class="fa fa-globe-europe"></i>
-							</div>
-							<h4>Website</h4>
-							<p>www.domain.com</p>
-						 </div> -->
-						 <!-- Contact info item end -->
-
-					</div>
-
-					<!-- <h3 class="contact-title padd-15">Send me an email</h3>
-					<h4 class="contact-sub-title padd-15">I'M VERY RESPONSIVE TO MESSAGES</h4> -->
-					
-					<!-- Contact Form -->
-					<!-- <div class="row">
-						<div class="contact-form padd-15">
-							<div class="row">
-								<div class="form-item col-6 padd-15">
-									<div class="form-group">
-										<input type="text" class="form-control" placeholder="Name"/>
-									</div>
-								</div>
-								<div class="form-item col-6 padd-15">
-									<div class="form-group">
-										<input type="email" class="form-control" placeholder="Email"/>
-									</div>
-								</div>
-							</div>
-							<div class="row">
-								<div class="form-item col-12 padd-15">
-									<div class="form-group">
-										<input type="text" class="form-control" placeholder="Subject"/>
-									</div>
-								</div>
-							</div>
-
-							<div class="row">
-								<div class="form-item col-12 padd-15">
-									<div class="form-group">
-										<textarea name="" class="form-control" id="" placeholder="Message"></textarea>
-									</div>
-								</div>
-							</div>
-							<div class="row">
-								<div class="form-item col-12 padd-15">
-									<div class="form-group">
-										<button type="submit" class="btn">Send Message </button>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div> -->
-				</div>
-			</section>
-			<!-- Contact Section Ends -->
-         </div>
-		 <!-- Main content ends -->
-    </div>
-
-	<!-- Main Container end -->
-
-	<!-- Style Switcher starts  -->
-	 <div class="style-switcher">
-		<div class="style-switcher-toggler s-icon">
-			<i class="fas fa-cog fa-spin"></i>
-		</div>
-		<div class="day-night s-icon">
-			<i class="fas"></i>
-		</div>
-		<h4>Theme Colors</h4>
-		<div class="colors">
-			<span class="color-1" onclick="setActiveStyle('color-1')"></span>
-			<span class="color-2" onclick="setActiveStyle('color-2')"></span>
-			<span class="color-3" onclick="setActiveStyle('color-3')"></span>
-			<span class="color-4" onclick="setActiveStyle('color-4')"></span>
-			<span class="color-5" onclick="setActiveStyle('color-5')"></span>
-		</div>
-	 </div>
-    <!-- JS Files -->
-    <script src="root/js/script.js"></script>
-	<script src="root/js/style-switcher.js"></script>
+        // Close menu when a link is clicked
+        const mobileLinks = menu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        });
+    </script>
 </body>
 </html>
